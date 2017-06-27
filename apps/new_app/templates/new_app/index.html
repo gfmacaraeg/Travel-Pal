@@ -1,0 +1,54 @@
+<html>
+<head>
+  <title>Login and registration</title>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+
+<h2>Registration</h2>
+
+
+<form action='/registration' method="post">
+{% csrf_token %}
+  Name:<input type="text" name="name">
+  {%for i in name%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  Alias:<input type="text" name="alias">
+  {%for i in alias%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  Email:<input type="text" name="email">
+  {%for i in email%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  Password <input type="text" name="password">
+  {%for i in password%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  Confirm Password:<input type="text" name="confirm">
+  {%for i in confirm%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  <input type="submit" value="Register">
+</form>
+<br>
+<hr>
+<h2>Login</h2>
+<form action="/login" method="post">
+{% csrf_token %}
+  Email:<input type="text" name="email">
+   {%for i in loginemail%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  Password <input type="text" name="password">
+   {%for i in loginpassword%}
+<p id = "error">{{i}}</p>
+{%endfor%}
+  <input type="submit" value="Login">
+</form>
+
+</body>
+</html>

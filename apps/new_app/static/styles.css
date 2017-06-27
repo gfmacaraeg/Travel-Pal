@@ -1,0 +1,55 @@
+input{
+	display: block;
+}
+#liked{
+	color:red;
+	font-weight: bold;
+}
+
+#error{
+	color: red;
+}
+#addbook{
+	display: inline-block;
+	margin-left: 500px;
+	margin-right: 20px; 
+}
+#welcome{
+	display: inline-block;
+}
+#home{
+	margin-left: 600px;
+	margin-right: 20px;
+}
+#rating{
+	display: inline-block;
+}
+#rev{
+	height: 600px;
+	width: 500px;
+	/*background: grey;*/
+	display: inline-block;
+}
+#other{
+	height: 300px;
+	width: 300px;
+	display: inline-block;
+/*	background: grey;*/
+	vertical-align: top;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+#inner{
+	height: 230px;
+	width: 270px;
+	display: inline-block;
+/*	background: red;*/
+	vertical-align: top;
+	overflow: scroll;
+	margin-left: 30px;
+	border: 1px solid;
+	padding: 10px;
+}
+
+

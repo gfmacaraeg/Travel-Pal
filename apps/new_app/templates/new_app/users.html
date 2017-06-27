@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Site</title>
+	  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	
+	
+	<a  id="addbook" href="/">Home</a><a href="/addbook">Add book and review</a><a href="/logout">Logout</a>
+	
+	<h2>User Alias: {{user.alias}}</h2>
+	<h2>Name: {{user.name}}</h2>
+	<h2>Name: {{user.email}}</h2>
+	{%for i in count%}
+	<h2>Total reviews: {{i.total}}</h2>
+	{%endfor%}
+
+	<br>
+	<p>Posted Reviews on the following books:</p>
+	{%for i in booksreviewed%}
+	<p><a href="/books/{{i.id}}">{{i.title}}</a></p>
+	{%endfor%}
+</body>
+</html>

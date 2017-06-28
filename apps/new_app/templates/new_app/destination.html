@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt exam</title>
+	  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	<div>
+	<a id="addbook" href="/travels">Home  </a><a href="/logout">Logout</a>
+	</div>
+	<div>
+	<h2>{{trips.destination}}</h2>
+	<p>Planned By: {{trips.user.name}}</p>
+	<p>Description: {{trips.description}}</p>
+	<p>Travel date from: {{trips.travel_start}}</p>
+	<p>Travel date to: {{trips.travel_end}}</p>
+	</div>
+	<h2>Other user's joining the trip</h2>
+	{%for i in joined%}
+	<p>{{i.user.name}}</p>
+	{%endfor%}
+</body>
+</html>

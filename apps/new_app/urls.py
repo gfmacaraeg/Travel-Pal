@@ -2,15 +2,13 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.main),
     url(r'^registration$', views.registration),
     url(r'^login$', views.login),
-    url(r'^books$', views.books),
+    url(r'^travels$', views.travels),
     url(r'^logout$', views.logout),
-    url(r'^addbook$', views.addbook),
-    url(r'^registerbook$', views.registerbook),
-    url(r'^books/(?P<id>\d+)$', views.showbooks),
-    url(r'^registerbook/(?P<id>\d+)$', views.registerbookshow),
-    url(r'^delete/(?P<id>\d+)$', views.delete),
-    url(r'^users/(?P<id>\d+)$', views.users),
+    url(r'^travels/add$', views.addtravel),
+    url(r'^createtravel$', views.createtravel),
+    url(r'^join/(?P<id>\d+)$', views.join),
+    url(r'^travels/destination/(?P<id>\d+)$', views.destination),
 ]

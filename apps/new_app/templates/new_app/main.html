@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+
+      <h2>Registration</h2>
+
+      <form action='/registration' method="post">
+                  {% csrf_token %}
+                  
+                  Name:<input type="text" name="name">
+                  
+                  {%for i in name%}
+                          <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  
+                  Username:<input type="text" name="username">
+                  
+                  {%for i in username%}
+                          <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  
+                  Password <input type="password" name="password">
+                  
+                  {%for i in password%}
+                          <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  
+                  Confirm Password:<input type="password" name="confirm">
+                  
+                  {%for i in confirm%}
+                          <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  <input type="submit" value="Register">
+      </form>
+      <br>
+      <hr>
+      <h2>Login</h2>
+      <form action="/login" method="post">
+                  {% csrf_token %}
+                  Username:<input type="text" name="username">
+                  
+                  {%for i in loginusername%}
+                        <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  
+                  Password <input type="password" name="password">
+                  {%for i in loginpassword%}
+                        <p id = "error">{{i}}</p>
+                  {%endfor%}
+                  
+                  <input type="submit" value="Login">
+      </form>
+
+</body>
+</html>

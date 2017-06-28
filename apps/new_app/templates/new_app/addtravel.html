@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Belt exam</title>
+	  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+<body>
+	
+	<div>
+	<a id="addbook" href="/travels">Home  </a><a href="/logout">Logout</a>
+	</div>
+	<div id="rev">
+	<div>
+		<h3>Add a Trip</h3>
+		{%for i in errors%}
+                          <p id = "error">{{i}}</p>
+                  	{%endfor%}
+		<form action ="/createtravel" method="post">
+			{% csrf_token %}
+			Destination: <input type="text" name="destination">
+			Description: <input type="text" name="description">
+			Travel Date From: <input type="date" name="travel_start">
+			Travel Date To: <input type="date" name="travel_end">
+			<input type="submit" value="Add">
+		</form>
+	</div>
+
+</body>
+</html>

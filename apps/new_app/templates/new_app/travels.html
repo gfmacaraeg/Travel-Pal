@@ -35,7 +35,6 @@
 			</tr>
 		{%endfor%}
 		{%for i in joined%}
-			
 			<tr>
 				<td>
 				<a href="/travels/destination/{{i.trip.id}}">{{i.trip.destination}}</a>
@@ -64,7 +63,7 @@
 			<th>Do you want to join?</th>
 		</tr>
 		{%for i in othertrips%}
-		{%if i.id not in listjoined%}
+		<!-- {%if i.id not in listjoined%} -->
 			<tr>
 				<td>
 				{{i.user.name}}
@@ -82,7 +81,7 @@
 				<a href="/join/{{i.id}}">Join</a>
 				</td>
 			</tr>
-		{%endif%}
+		<!-- {%endif%} -->
 		{%endfor%}
 		
 		</table>

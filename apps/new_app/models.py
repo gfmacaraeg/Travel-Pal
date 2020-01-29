@@ -141,7 +141,7 @@ class Trips(models.Model):
 	user = models.ForeignKey(User,related_name ="usertrips", on_delete=models.CASCADE)
 	created_at = models.DateTimeField(auto_now_add=True)
 	updated_at = models.DateTimeField(auto_now=True)
-
+	
 	objects = TripsManager()
 
 class Joinedtrips(models.Model):

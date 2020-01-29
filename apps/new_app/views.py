@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse, 
 from .models import *
 import bcrypt
 from datetime import *
+
 def main(request):
 	if 'user' in request.session:
 		return redirect('/travels')
@@ -67,8 +68,6 @@ def travels(request):
 	else:
 		return redirect('/')	
 		
-	
-
 def addtravel(request):
 	error = []
 	if 'adderror' in request.session:
@@ -93,11 +92,8 @@ def createtravel(request):
 		else:
 			request.session['adderror'] = error['error']
 			return redirect('travels/add')
-	return redirect('travels/add')	
-		# datediff = int(form_data['travel_end']) - int(form_data['travel_start'])
-		# print datediff
+	return redirect('travels/add')
 		
-
 def join(request,id):
 	user = User.objects.filter(id = request.session['user']).first()
 	join = Joinedtrips.objects.create(user_id = user.id, trip_id = id)
@@ -113,8 +109,3 @@ def destination(request,id):
 	'joined': joined
 	}
 	return render(request,'new_app/destination.html',context)
-
-
-
-
-

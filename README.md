@@ -28,7 +28,7 @@ TECHNOLOGY USED:
 
 3.  CSS3 and HTML5 were used for initial form validation.
 
-4.  Bcrypt was used as a salt/hash algorithm to obsfuscate each user's password stored in MySQL.
+4.  Bcrypt was used as a salt/hash algorithm to obsfuscate each user's password stored in SQLite.
 
 5.  Django, Nginx, and Gunicorn were used for server deployment, routing, and execution with data and template client-side service requests handled with Jinja2 and JavaScript.
 

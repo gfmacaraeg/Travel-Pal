@@ -1,102 +1,105 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Belt exam</title>
-	  {% load staticfiles %}
-  <link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title"  charset="utf-8">
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'styles.css' %}" media="screen" title="no title" charset="utf-8">
 </head>
+
 <body>
 	<div>
-	<h3 id="welcome">Welcome, {{user.name}}</h3><a id="addbook" href="/logout">Logout</a>
+		<h3 id="welcome">Welcome, {{user.name}}</h3><a id="addbook" href="/logout">Logout</a>
 	</div>
 	<div id="rev">
 		<h2>Your Trip Schedules:</h2>
-	<table>
-		<tr>
-			<th>Destination</th>
-			<th>Travel Start Date</th>
-			<th>Travel End Date</th>
-			<th>Plan</th>
-		</tr>
-		{%for i in usertrips%}
+		<table>
+			<tr>
+				<th>Destination</th>
+				<th>Travel Start Date</th>
+				<th>Travel End Date</th>
+				<th>Plan</th>
+			</tr>
+			{%for i in usertrips%}
 			<tr>
 				<td>
-				<a href="/travels/destination/{{i.id}}">{{i.destination}}</a>
+					<a href="/travels/destination/{{i.id}}">{{i.destination}}</a>
 				</td>
 				<td>
-				{{i.travel_start}}
+					{{i.travel_start}}
 				</td>
 				<td>
-				{{i.travel_end}}
+					{{i.travel_end}}
 				</td>
 				<td>
-				{{i.description}}
+					{{i.description}}
 				</td>
 			</tr>
-		{%endfor%}
-		{%for i in joined%}
+			{%endfor%}
+			{%for i in joined%}
 			<tr>
 				<td>
-				<a href="/travels/destination/{{i.trip.id}}">{{i.trip.destination}}</a>
+					<a href="/travels/destination/{{i.trip.id}}">{{i.trip.destination}}</a>
 				</td>
 				<td>
-				{{i.trip.travel_start}}
+					{{i.trip.travel_start}}
 				</td>
 				<td>
-				{{i.trip.travel_end}}
+					{{i.trip.travel_end}}
 				</td>
 				<td>
-				{{i.trip.description}}
+					{{i.trip.description}}
 				</td>
 			</tr>
-			
-		{%endfor%}
+
+			{%endfor%}
 		</table>
 
-	Other User's plans:
-	<table>
-		<tr>
-			<th>Name</th>
-			<th>Destination</th>
-			<th>Travel Start date</th>
-			<th>Travel End date</th>
-			<th>Do you want to join?</th>
-		</tr>
-		{%for i in othertrips%}
-		<!-- {%if i.id not in listjoined%} -->
+		Other User's plans:
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Destination</th>
+				<th>Travel Start date</th>
+				<th>Travel End date</th>
+				<th>Do you want to join?</th>
+			</tr>
+			{%for i in othertrips%}
+			<!-- {%if i.id not in listjoined%} -->
 			<tr>
 				<td>
-				{{i.user.name}}
+					{{i.user.name}}
 				</td>
 				<td>
-				<a href="/travels/destination/{{i.id}}">{{i.destination}}</a>
+					<a href="/travels/destination/{{i.id}}">{{i.destination}}</a>
 				</td>
 				<td>
-				{{i.travel_start}}
+					{{i.travel_start}}
 				</td>
 				<td>
-				{{i.travel_end}}
+					{{i.travel_end}}
 				</td>
 				<td>
-				<a href="/join/{{i.id}}">Join</a>
+					<a href="/join/{{i.id}}">Join</a>
 				</td>
 			</tr>
-		<!-- {%endif%} -->
-		{%endfor%}
-		
+			<!-- {%endif%} -->
+			{%endfor%}
+
 		</table>
 
 
 
 
-	<br>
-	<a href="/travels/add">Add Travel Plan</a>
+		<br>
+		<a href="/travels/add">Add Travel Plan</a>
 
-	
+
 
 
 	</div>
 
-	
+
 </body>
+
 </html>

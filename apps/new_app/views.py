@@ -12,7 +12,6 @@ def main(request):
 	request.session.pop('errors')
 	return render(request,'new_app/main.html',context)
 
-
 def registration(request):
 	if request.method =="POST":
 		form_data = request.POST
